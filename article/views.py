@@ -1,3 +1,10 @@
-from django.shortcuts import render
+# article/views.py
 
-# Create your views here.
+from django.shortcuts import render
+from article.models import Article
+
+def home(request):
+    articles = Article.objects.all()
+    return render(request, "article/home.html", {"articles": articles})
+
+
