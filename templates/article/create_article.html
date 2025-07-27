@@ -1,16 +1,12 @@
 <!-- templates/article/create_article.html -->
-<!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial=scale=1.0">
-    <title>Create article</title>
-</head>
-<body>
+{% extends "article/base.html" %}
+    {% block content %}
     <h1>Create Article</h1>
     <form method="POST">
         {% csrf_token %}
         {{form.as_p}}
         <button type="submit">Save</button>
     </form>
-</body>
-</html>
+
+    <a href="{% url "home" %}">Back to list</a>
+    {% endblock content %}

@@ -1,19 +1,18 @@
 <!-- templates/article/home.html -->
-<!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial=scale=1.0">
-    <title>Django Project</title>
-</head>
-<body>
+{% extends "article/base.html"%}
+    {% block content %}
     <h1>Articles</h1>
+    <a href="{% url "create_article" %}">Create article</a>
+    {% if articles %}
     <ul>
         {% if articles %}
             {% for article in articles %}
-                <li>{{ article.title }} with {{ article.word_count }} words.</h1>
+                <li>{{ article.title }} with {{ article.word_count }} word{{ article.word_count | pluralize }}.</h1>
 
             {% endfor %}
         {% endif %}
     </ul>
-</body>
-</html>
+    {% else %}
+        <p>You have no articles yet.</p>
+    {% endif %}
+    {% endblock content %}
