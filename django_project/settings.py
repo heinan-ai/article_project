@@ -138,6 +138,11 @@ AUTH_PASSWORD_VALIDATORS = [
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "account_login"
 
+ACCOUNT_AUTHENTICATION_METHOD = "email"
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_SIGNUP_FIELDS = ['email*', 'password1*', 'password2*']
+ACCOUNT_EMAIL_VERIFICATION = "none"
+
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
