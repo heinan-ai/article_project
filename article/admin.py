@@ -5,7 +5,7 @@ from article.models import Article, UserProfile
 from django.contrib.auth.admin import UserAdmin
 
 class ArticleAdmin(admin.ModelAdmin):
-    list_display = ("title", "word_count", "status", "created_at", "updated_at")
+    list_display = ("title", "word_count", "status", "created_at", "updated_at", "creator")
     list_filter = ("status",)
     search_fields = ("title", "content")
     date_hierarchy = "created_at"
@@ -35,4 +35,4 @@ class CustomUserAdmin(UserAdmin):
 
 
 admin.site.register(Article, ArticleAdmin)
-admin.site.register(UserProfile)
+admin.site.register(UserProfile, CustomUserAdmin)

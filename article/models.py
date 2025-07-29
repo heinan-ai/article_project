@@ -5,10 +5,15 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.conf import settings
 from django.utils.translation import gettext_lazy
+from article.managers import UserProfileManager
 
 
 class UserProfile(AbstractUser):
-    pass
+    email = models.EmailField(gettext_lazy("email address"), max_length=255, unique=True)
+    objects = UserProfileManager()
+    USERNAME_FIELD = "email"
+    REQUIRED_FIELDS = []
+    
 
 
 class Article(models.Model):

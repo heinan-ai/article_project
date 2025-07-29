@@ -8,55 +8,68 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-29 13:22+0000\n"
+"POT-Creation-Date: 2025-07-29 13:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fa\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: article/managers.py:7
+msgid "The email must be set"
+msgstr "ایمیل باید وارد شود"
 
-#: article/models.py:17
+#: article/managers.py:19
+msgid "Superuser must have is_staff=True"
+msgstr "برای کاربر مدیر، باید is_staff=True باشد."
+
+#: article/managers.py:21
+msgid "Superuser must have is_superuser=True"
+msgstr "برای کاربر مدیر is_superuser=True باشد."
+
+#: article/models.py:12
+msgid "email address"
+msgstr "آدرس ایمیل"
+
+#: article/models.py:22
 msgid "Article"
 msgstr "مقاله"
 
-#: article/models.py:18
+#: article/models.py:23
 msgid "Articles"
 msgstr "مقالات"
 
-#: article/models.py:20
+#: article/models.py:26
 msgid "title"
 msgstr "عنوان"
 
-#: article/models.py:21
+#: article/models.py:27
 msgid "content"
 msgstr "محتوا"
 
-#: article/models.py:22
+#: article/models.py:28
 msgid "word count"
 msgstr "تعداد کلمات"
 
-#: article/models.py:23
+#: article/models.py:29
 msgid "twitter post"
 msgstr "پست توییتر"
 
-#: article/models.py:25
+#: article/models.py:31
 msgid "status"
 msgstr "وضعیت"
 
-#: article/models.py:34
+#: article/models.py:40
 msgid "created at"
 msgstr "تاریخ ایجاد"
 
-#: article/models.py:35
+#: article/models.py:41
 msgid "updated at"
 msgstr "تاریخ به روز رسانی"
 
-#: article/models.py:36
+#: article/models.py:42
 msgid "writer"
 msgstr "نویسنده"
-
