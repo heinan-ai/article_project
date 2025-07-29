@@ -146,6 +146,8 @@ ACCOUNT_EMAIL_VERIFICATION = "none"
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
+
+# LANGUAGE_CODE = 'fa'
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -154,6 +156,9 @@ USE_I18N = True
 
 USE_TZ = True
 
+LOCALE_PATH = [
+    BASE_DIR / "locale"
+]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
