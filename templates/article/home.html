@@ -1,7 +1,11 @@
 <!-- templates/article/home.html -->
 {% extends "article/base.html"%}
+{% load humanize %}
     {% block content %}
     <h1>Articles</h1>
+    <p>
+        You have created {{user.article_count | intcomma }} article{{user.article_count|pluralize}} and {{user.written_words | intcomma }} written word{{article.written_words|pluralize}}.
+    </p>
     <a href="{% url "create_article" %}">Create article</a>
     {% if articles %}
     <ul>
