@@ -17,13 +17,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic.base import RedirectView
+from allauth.account.views import SignupView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("articles/", include("article.urls")),
+    path("", SignupView.as_view(), name="account_signup"),
+    path("accounts/signup/", RedirectView.as_view(url="/")),
     path("accounts/", include("allauth.urls")),
-    path("", RedirectView.as_view(pattern_name="home")),
-    
+
     # toobar url
     path("__debug__/", include("debug_toolbar.urls")),
 ]
