@@ -22,9 +22,12 @@ class ArticleListView(LoginRequiredMixin, ListView):
     template_name = "article/home.html"
     model = Article
     context_object_name = "articles"
+    paginate_by = 5
     
+
     def get_queryset(self):
-        return Article.objects.filter(creator=self.request.user).order_by("-created_at")
+        queryset = super().get_queryset().filter(creator=self.request.user)
+        return queryset.order_by("-created_at")
     
 
 class ArticleCreateView(LoginRequiredMixin, CreateView):
@@ -60,6 +63,6 @@ class ArticleDeleteView(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageM
     def test_func(self):
         return self.request.user == self.get_object().creator
     
-    def post(self, request: HttpRequest, *args: str, **kwargs: Any) -> HttpResponse:
+    def post(self, request: HttpRequest, *args: str, **kwargs: any) -> HttpResponse:
         messages.success(request, "Article deleted successfully.", extra_tags="destructive")
         return super().post(request, *args, **kwargs) 
