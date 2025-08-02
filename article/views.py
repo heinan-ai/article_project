@@ -26,7 +26,10 @@ class ArticleListView(LoginRequiredMixin, ListView):
     
 
     def get_queryset(self):
+        search_query = self.request.GET.get("search")
         queryset = super().get_queryset().filter(creator=self.request.user)
+        if search_query:
+            queryset = queryset.filter(title__search=search_query)
         return queryset.order_by("-created_at")
     
 
