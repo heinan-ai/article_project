@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import dj_database_url
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -51,7 +52,8 @@ THIRD_PARTY_APPS = [
     "allauth.account",
     "allauth.socialaccount",
     "allauth.socialaccount.providers.github",
-    "widget_tweaks"
+    "widget_tweaks",
+    "anymail"
 ]
 
 PROJECT_APPS = [
@@ -146,6 +148,18 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+
+DEFAULY_FROM_EMAIL = os.getenv("MAILGUN_EMAIL", "None")
+
+ANYMAIL = {
+    "MAILGUN_API_KEY": os.getenv("MAILGUN_API_KEY", "None"),
+    "SENF_DEFAULTS": {"tags": ["django_project"]}
+}
+
+EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
+
+
 
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "account_login"
