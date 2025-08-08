@@ -19,4 +19,7 @@ COPY . .
 EXPOSE 8000
 
 # ENTRYPOINT [ "poetry", "run", "python", "manage.py", "runserver", "0.0.0.0:8000" ]
+
+RUN chmod +x /code/start-django.sh
+
 ENTRYPOINT [ "/code/start-django.sh" ]
