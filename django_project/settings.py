@@ -31,6 +31,8 @@ DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = ["*"]
 
+CSRF_TRUSTED_ORIGINS = ["*"]
+
 ADMIN_URL = os.getenv("ADMIN_URL", "admin")
 
 if ENV_STATE == "production":
