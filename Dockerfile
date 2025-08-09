@@ -10,6 +10,8 @@ WORKDIR /code
 
 RUN pip install poetry
 
+RUN poetry add "django-anymail[brevo]"
+
 COPY pyproject.toml poetry.lock ./
 
 RUN poetry install --no-root
