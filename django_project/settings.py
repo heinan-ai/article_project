@@ -162,14 +162,14 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-DEFAULY_FROM_EMAIL = os.getenv("MAILGUN_EMAIL", "None")
+DEFAULY_FROM_EMAIL = os.getenv("BREVO_EMAIL", "None")
 
 ANYMAIL = {
-    "MAILGUN_API_KEY": os.getenv("MAILGUN_API_KEY", "None"),
+    "BREVO_API_KEY": os.getenv("BREVO_API_KEY", "None"),
     "SEND_DEFAULTS": {"tags": ["django_project"]}
 }
 
-EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
+EMAIL_BACKEND = "anymail.backends.brevo.EmailBackend"
 
 
 
@@ -179,7 +179,7 @@ LOGOUT_REDIRECT_URL = "account_login"
 ACCOUNT_LOGIN_METHODS = {'email'}
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_SIGNUP_FIELDS = ['email*', 'password1*', 'password2*']
-ACCOUNT_EMAIL_VERIFICATION = False
+ACCOUNT_EMAIL_VERIFICATION = True
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
