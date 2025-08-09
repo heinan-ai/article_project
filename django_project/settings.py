@@ -174,10 +174,10 @@ EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "account_login"
 
-settings.ACCOUNT_LOGIN_METHODS = {'email'}
+ACCOUNT_LOGIN_METHODS = {'email'}
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_SIGNUP_FIELDS = ['email*', 'password1*', 'password2*']
-ACCOUNT_EMAIL_VERIFICATION = True
+ACCOUNT_EMAIL_VERIFICATION = False
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
